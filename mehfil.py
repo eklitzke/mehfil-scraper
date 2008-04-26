@@ -23,6 +23,10 @@ if __name__ == '__main__':
 	positions = positions[1:]
 
 	for x, y in zip(positions, positions[1:]):
-		print v[x:y].strip().decode('windows-1252')
+		s = v[x:y].strip()
+		try:
+			print s.decode('windows-1252')
+		except:
+			print s
 		print
 	print '(%s)%s' % (len(positions), u)
